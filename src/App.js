@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import config from './config.js';
+import UserLogin from './user/login.js';
+
+// @todo constants
+
+// @todo load user and access token from cookie
 
 function App() {
+  //console.log(config);
+  
+  fetch(config.api.url + '/user')
+    .then(response => response.json())
+    .then(data => console.log(data));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Rapidest</h1>
+      <div className="main">
+        <UserLogin />
+      </div>
     </div>
   );
 }
