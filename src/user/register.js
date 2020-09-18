@@ -1,4 +1,5 @@
 import React from 'react';
+import CoreForm from '../core/form.js';
 
 export default class UserRegister extends React.Component {
   render() {
@@ -6,5 +7,6 @@ export default class UserRegister extends React.Component {
       { name: "email", type: "email" },
       { name: "password", type: "password" }
     ];
-    return <CoreForm elements={elements} />;  
+    return <CoreForm elements={elements} />;
+  }
 }
